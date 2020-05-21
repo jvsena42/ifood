@@ -33,13 +33,11 @@ public class AutenticacaoActivity extends AppCompatActivity {
     private FirebaseAuth autenticacao;
     private LinearLayout linearTipoUsuario;
 
-   // private FirebaseAuth autenticacao;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_autenticacao);
-        getSupportActionBar().hide();
+
 
         inicializaComponentes();
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
