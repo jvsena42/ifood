@@ -26,6 +26,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
     //firebase
     implementation 'com.google.firebase:firebase-core:17.0.0'
@@ -35,6 +36,11 @@ dependencies {
 
     //Material Searchview
     implementation 'com.miguelcatalan:materialsearchview:1.4.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //Circle ImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }
