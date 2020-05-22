@@ -26,7 +26,7 @@ public class EmpresaActivity extends AppCompatActivity {
 
         //Configurar toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Ifood - empresa");
+        toolbar.setTitle("Ifood - Empresa");
         setSupportActionBar(toolbar);
     }
 
@@ -60,6 +60,7 @@ public class EmpresaActivity extends AppCompatActivity {
     private void deslogarUsuario(){
         try {
             autenticacao.signOut();
+            finish();
         }catch (Exception e){
             e.printStackTrace();
         }
