@@ -3,7 +3,9 @@ package com.balatech.ifood.model;
 import com.balatech.ifood.helper.ConfiguracaoFirebase;
 import com.google.firebase.database.DatabaseReference;
 
-public class Empresa {
+import java.io.Serializable;
+
+public class Empresa implements Serializable {
 
     private String idUsuario;
     private String urlImagem;
