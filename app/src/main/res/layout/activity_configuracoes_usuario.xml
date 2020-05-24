@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".activity.ConfiguracoesUsuarioActivity">
 
+    <Button
+        android:id="@+id/buttonSalvar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="validarDadosUsuario"
+        android:padding="16dp"
+        android:text="Salvar"
+        android:theme="@style/botaoPadrao"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editUsuarioEndereço"
+        tools:theme="@style/botaoPadrao" />
+
     <include
         android:id="@+id/include"
         layout="@layout/toolbar"
@@ -14,5 +31,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editUsuarioEndereço"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="Endereço completo"
+        android:inputType="text"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSalvar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editUsuarioNome" />
+
+    <EditText
+        android:id="@+id/editUsuarioNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="text"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/editUsuarioEndereço"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintVertical_bias="0.060000002"
+        app:layout_constraintVertical_chainStyle="packed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
