@@ -58,7 +58,7 @@ public class Pedido {
 
         DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebase();
         DatabaseReference pedidoRef = firebaseRef
-                .child("pedidos_usuario")
+                .child("pedidos")
                 .child(getIdEmpresa())
                 .child(getIdPedido());
         pedidoRef.setValue(this);

@@ -58,7 +58,7 @@ public class EmpresaActivity extends AppCompatActivity {
         //Configurar recyclerview
         recyclerProdutos.setLayoutManager(new LinearLayoutManager(this));
         recyclerProdutos.setHasFixedSize(true);
-        adapterProduto = new AdapterProduto(produtos,this);
+        adapterProduto = new AdapterProduto(produtos, this);
         recyclerProdutos.setAdapter(adapterProduto);
 
         //Recuperar produtos
@@ -92,14 +92,14 @@ public class EmpresaActivity extends AppCompatActivity {
     }
 
 
-    private void recuperarProdutos(){
+    private void recuperarProdutos() {
         DatabaseReference produtosRef = firebaseRef.child("produtos").child(idUsuarioLogado);
 
         produtosRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 produtos.clear();
-                for (DataSnapshot ds: dataSnapshot.getChildren()){
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     produtos.add(ds.getValue(Produto.class));
                 }
                 adapterProduto.notifyDataSetChanged();
@@ -112,7 +112,7 @@ public class EmpresaActivity extends AppCompatActivity {
         });
     }
 
-    private void inicializarComponentes(){
+    private void inicializarComponentes() {
         recyclerProdutos = findViewById(R.id.recyclerProdutos);
     }
 
@@ -120,7 +120,7 @@ public class EmpresaActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_empresa,menu);
+        inflater.inflate(R.menu.menu_empresa, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -128,7 +128,7 @@ public class EmpresaActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.menuSair:
                 deslogarUsuario();
                 break;
@@ -138,25 +138,33 @@ public class EmpresaActivity extends AppCompatActivity {
             case R.id.menuNovoProduto:
                 abrirNovoProduto();
                 break;
+            case R.id.menuPedidos:
+                abrirPedidos();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    private void deslogarUsuario(){
+    private void deslogarUsuario() {
         try {
             autenticacao.signOut();
             finish();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void abrirConfiguracoes(){
-        startActivity(new Intent(EmpresaActivity.this,ConfiguracoesEmpresaActivity.class));
+    private void abrirPedidos(){
+        startActivity(new Intent(EmpresaActivity.this, PedidosActivity.class));
+
     }
 
-    private void abrirNovoProduto(){
-        startActivity(new Intent(EmpresaActivity.this,NovoProdutoEmpresaActivity.class));
+    private void abrirConfiguracoes() {
+        startActivity(new Intent(EmpresaActivity.this, ConfiguracoesEmpresaActivity.class));
+    }
+
+    private void abrirNovoProduto() {
+        startActivity(new Intent(EmpresaActivity.this, NovoProdutoEmpresaActivity.class));
     }
 }
